@@ -23,6 +23,9 @@
 		76DB7AF118FA1C4C004E8688 /* SFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DB7AE618FA1C4C004E8688 /* SFURLConnectionOperation.m */; };
 		76DB7AF218FA1C4C004E8688 /* SFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DB7AE818FA1C4C004E8688 /* SFXMLRequestOperation.m */; };
 		76DB7AF318FA1C4C004E8688 /* UIImageView+SFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DB7AEA18FA1C4C004E8688 /* UIImageView+SFNetworking.m */; };
+		76F8293318FAFEA900FD99E0 /* frontlayer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76F8293218FAFEA900FD99E0 /* frontlayer.jpg */; };
+		76F8293518FB021000FD99E0 /* spritzbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F8293418FB021000FD99E0 /* spritzbutton.png */; };
+		76F8293718FB03FE00FD99E0 /* sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76F8293618FB03FD00FD99E0 /* sample.jpg */; };
 		D4231DDF18F66D02000BB5B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4231DDE18F66D02000BB5B3 /* Foundation.framework */; };
 		D4231DE118F66D02000BB5B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4231DE018F66D02000BB5B3 /* CoreGraphics.framework */; };
 		D4231DE318F66D02000BB5B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4231DE218F66D02000BB5B3 /* UIKit.framework */; };
@@ -68,6 +71,9 @@
 		76DB7AE818FA1C4C004E8688 /* SFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFXMLRequestOperation.m; sourceTree = "<group>"; };
 		76DB7AE918FA1C4C004E8688 /* UIImageView+SFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+SFNetworking.h"; sourceTree = "<group>"; };
 		76DB7AEA18FA1C4C004E8688 /* UIImageView+SFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SFNetworking.m"; sourceTree = "<group>"; };
+		76F8293218FAFEA900FD99E0 /* frontlayer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = frontlayer.jpg; path = Images.xcassets/frontlayer.jpg; sourceTree = "<group>"; };
+		76F8293418FB021000FD99E0 /* spritzbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spritzbutton.png; sourceTree = "<group>"; };
+		76F8293618FB03FD00FD99E0 /* sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sample.jpg; path = Images.xcassets/sample.jpg; sourceTree = "<group>"; };
 		D4231DDB18F66D02000BB5B3 /* Hello World.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hello World.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4231DDE18F66D02000BB5B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D4231DE018F66D02000BB5B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -106,11 +112,11 @@
 				76DB7AB218FA139E004E8688 /* OCRSDKClient.m */,
 				761A3F2818FA417C0011CF0B /* OCRDemoClient.h */,
 				761A3F2918FA417C0011CF0B /* OCRMainViewController.h */,
+				761A3F2A18FA417C0011CF0B /* OCRMainViewController.m */,
 				761A3F2E18FA417C0011CF0B /* OCRDemoClient.m */,
 				761A3F2D18FA417C0011CF0B /* OCRTextViewController.m */,
 				761A3F2C18FA417C0011CF0B /* OCRTextViewController.h */,
 				761A3F2B18FA417C0011CF0B /* OCRSDKDemo-Prefix.pch */,
-				761A3F2A18FA417C0011CF0B /* OCRMainViewController.m */,
 			);
 			name = OCR;
 			sourceTree = "<group>";
@@ -192,7 +198,10 @@
 		D4231DE518F66D02000BB5B3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				76F8293618FB03FD00FD99E0 /* sample.jpg */,
+				76F8293418FB021000FD99E0 /* spritzbutton.png */,
 				D4231DE618F66D02000BB5B3 /* Hello World-Info.plist */,
+				76F8293218FAFEA900FD99E0 /* frontlayer.jpg */,
 				D4231DE718F66D02000BB5B3 /* InfoPlist.strings */,
 				D4231DEA18F66D02000BB5B3 /* main.m */,
 				D4231DEC18F66D02000BB5B3 /* Hello World-Prefix.pch */,
@@ -255,8 +264,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4231DF718F66D02000BB5B3 /* Images.xcassets in Resources */,
+				76F8293518FB021000FD99E0 /* spritzbutton.png in Resources */,
 				D4231DE918F66D02000BB5B3 /* InfoPlist.strings in Resources */,
+				76F8293318FAFEA900FD99E0 /* frontlayer.jpg in Resources */,
 				D4231DF218F66D02000BB5B3 /* Main.storyboard in Resources */,
+				76F8293718FB03FE00FD99E0 /* sample.jpg in Resources */,
 				76DB7A9118F9B0AE004E8688 /* Good.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

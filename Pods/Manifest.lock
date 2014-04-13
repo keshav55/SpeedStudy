@@ -35,10 +35,12 @@ PODS:
     - MSDynamicsDrawerViewController
     - NJKWebViewProgress
     - NSDate+TimeAgo
+  - Unirest (1.1.3)
   - XMLDictionary (1.3)
 
 DEPENDENCIES:
   - Spritz-SDK (from `http://sdk.spritzinc.com/ios/0.8/Spritz-SDK-lahacks.podspec`)
+  - Unirest (~> 1.1.2)
   - XMLDictionary (~> 1.3)
 
 EXTERNAL SOURCES:
@@ -53,6 +55,7 @@ SPEC CHECKSUMS:
   NJKWebViewProgress: 4f905b9ab7eb91525dc899cacebd2941a6d4553b
   NSDate+TimeAgo: ca09306750ac2564418042aa10cf8365c36d2cee
   Spritz-SDK: 41b9f4dbe5565bfd633bc56915378058adec141c
+  Unirest: 1dfb0c47fca6b6af8d058dabe1b110567ff4cd70
   XMLDictionary: 27390d3517062694ccb307a7750250e1b687571d
 
 COCOAPODS: 0.31.1

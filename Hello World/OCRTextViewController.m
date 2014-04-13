@@ -1,7 +1,12 @@
 #import "OCRTextViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import <Spritz-SDK/SpritzSDK.h>
+#import "ViewController.h"
 
 @implementation OCRTextViewController
+
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,9 +38,14 @@
 {
     if (_text != text) {
 		_text = text;
-        
+        [[NSUserDefaults standardUserDefaults]setObject:text forKey:@"reading"];
         [self configureView];
     }
 }
-
+-(void)goAway {
+    
+   
+    
+    
+}
 @end

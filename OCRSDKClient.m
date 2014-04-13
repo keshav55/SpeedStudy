@@ -78,9 +78,8 @@ static NSString * const kOCRSDKInstallationId = @"com.abbyy.ocrsdk.installation-
 }
 
 #pragma mark -
-
 - (void)activateInstallationWithDeviceId:(NSString *)deviceId
-								 success:(void (^)(void))success
+                                 success:(void (^)(void))success
 								 failure:(void (^)(NSError *error))failure
 								   force:(BOOL)force
 {
@@ -88,29 +87,15 @@ static NSString * const kOCRSDKInstallationId = @"com.abbyy.ocrsdk.installation-
 	NSParameterAssert(self.applicationId);
 	NSParameterAssert(self.password);
 	
-	if (self.installationId == nil || force) {
-		[self getPath:@"activateNewInstallation" parameters:@{@"deviceId": deviceId} success:^(SFHTTPRequestOperation *operation, id responseObject) {
-			NSDictionary *responseDictionary = [NSDictionary dictionaryWithXMLData:responseObject];
-			
-			NSString *installationId = [responseDictionary valueForKey:@"authToken"];
-			[[NSUserDefaults standardUserDefaults] setObject:installationId forKey:kOCRSDKInstallationId];
-			
-			NSParameterAssert(self.installationId);
-			
-			[self activateInstallationWithDeviceId:deviceId success:success failure:failure force:NO];
-		} failure:^(SFHTTPRequestOperation *operation, NSError *error) {
-			if (failure != nil) {
-				failure(error);
-			}
-		}];
-	} else {
-		[self updateAuthorizationHeader];
-		
-		if (success != nil) {
-			success();
-		}
+	[self updateAuthorizationHeader];
+    
+	if (success != nil) {
+		success();
 	}
 }
+
+	
+
 
 - (void)startTaskWithImageData:(NSData *)imageData
 					withParams:(NSDictionary *)processingParams
