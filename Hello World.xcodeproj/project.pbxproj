@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		388C841C92124E8CBF7FB83E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE4EB8706EE4F4B80873344 /* libPods.a */; };
+		761A3F2F18FA417C0011CF0B /* OCRMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 761A3F2A18FA417C0011CF0B /* OCRMainViewController.m */; };
+		761A3F3018FA417C0011CF0B /* OCRTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 761A3F2D18FA417C0011CF0B /* OCRTextViewController.m */; };
+		761A3F3118FA417C0011CF0B /* OCRDemoClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 761A3F2E18FA417C0011CF0B /* OCRDemoClient.m */; };
+		761A3F3518FA46070011CF0B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 761A3F3418FA46070011CF0B /* HomeViewController.m */; };
 		76DB7A9118F9B0AE004E8688 /* Good.txt in Resources */ = {isa = PBXBuildFile; fileRef = 76DB7A9018F9B0AE004E8688 /* Good.txt */; };
 		76DB7AB318FA139E004E8688 /* OCRSDKClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DB7AB218FA139E004E8688 /* OCRSDKClient.m */; };
 		76DB7AEB18FA1C4C004E8688 /* SFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DB7AD918FA1C4C004E8688 /* SFHTTPClient.m */; };
@@ -33,6 +37,15 @@
 /* Begin PBXFileReference section */
 		0DE4EB8706EE4F4B80873344 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1740DEBC13DC4241BAF2B69E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		761A3F2818FA417C0011CF0B /* OCRDemoClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCRDemoClient.h; sourceTree = "<group>"; };
+		761A3F2918FA417C0011CF0B /* OCRMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCRMainViewController.h; sourceTree = "<group>"; };
+		761A3F2A18FA417C0011CF0B /* OCRMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCRMainViewController.m; sourceTree = "<group>"; };
+		761A3F2B18FA417C0011CF0B /* OCRSDKDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCRSDKDemo-Prefix.pch"; sourceTree = "<group>"; };
+		761A3F2C18FA417C0011CF0B /* OCRTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCRTextViewController.h; sourceTree = "<group>"; };
+		761A3F2D18FA417C0011CF0B /* OCRTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCRTextViewController.m; sourceTree = "<group>"; };
+		761A3F2E18FA417C0011CF0B /* OCRDemoClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCRDemoClient.m; sourceTree = "<group>"; };
+		761A3F3318FA46070011CF0B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		761A3F3418FA46070011CF0B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		76DB7A9018F9B0AE004E8688 /* Good.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Good.txt; sourceTree = "<group>"; };
 		76DB7AB118FA139E004E8688 /* OCRSDKClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCRSDKClient.h; path = ../OCRSDKClient.h; sourceTree = "<group>"; };
 		76DB7AB218FA139E004E8688 /* OCRSDKClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCRSDKClient.m; path = ../OCRSDKClient.m; sourceTree = "<group>"; };
@@ -86,6 +99,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		761A3F3218FA41850011CF0B /* OCR */ = {
+			isa = PBXGroup;
+			children = (
+				76DB7AB118FA139E004E8688 /* OCRSDKClient.h */,
+				76DB7AB218FA139E004E8688 /* OCRSDKClient.m */,
+				761A3F2818FA417C0011CF0B /* OCRDemoClient.h */,
+				761A3F2918FA417C0011CF0B /* OCRMainViewController.h */,
+				761A3F2E18FA417C0011CF0B /* OCRDemoClient.m */,
+				761A3F2D18FA417C0011CF0B /* OCRTextViewController.m */,
+				761A3F2C18FA417C0011CF0B /* OCRTextViewController.h */,
+				761A3F2B18FA417C0011CF0B /* OCRSDKDemo-Prefix.pch */,
+				761A3F2A18FA417C0011CF0B /* OCRMainViewController.m */,
+			);
+			name = OCR;
+			sourceTree = "<group>";
+		};
 		76DB7AD718FA1C4C004E8688 /* SFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,11 +176,12 @@
 				76DB7AD718FA1C4C004E8688 /* SFNetworking */,
 				D4231DED18F66D02000BB5B3 /* AppDelegate.h */,
 				D4231DEE18F66D02000BB5B3 /* AppDelegate.m */,
-				76DB7AB118FA139E004E8688 /* OCRSDKClient.h */,
-				76DB7AB218FA139E004E8688 /* OCRSDKClient.m */,
 				D4231DF018F66D02000BB5B3 /* Main.storyboard */,
-				D4231DF318F66D02000BB5B3 /* ViewController.h */,
+				761A3F3318FA46070011CF0B /* HomeViewController.h */,
+				761A3F3418FA46070011CF0B /* HomeViewController.m */,
 				D4231DF418F66D02000BB5B3 /* ViewController.m */,
+				D4231DF318F66D02000BB5B3 /* ViewController.h */,
+				761A3F3218FA41850011CF0B /* OCR */,
 				76DB7A9018F9B0AE004E8688 /* Good.txt */,
 				D4231DF618F66D02000BB5B3 /* Images.xcassets */,
 				D4231DE518F66D02000BB5B3 /* Supporting Files */,
@@ -273,12 +303,16 @@
 			files = (
 				76DB7AF118FA1C4C004E8688 /* SFURLConnectionOperation.m in Sources */,
 				76DB7AF318FA1C4C004E8688 /* UIImageView+SFNetworking.m in Sources */,
+				761A3F3118FA417C0011CF0B /* OCRDemoClient.m in Sources */,
 				76DB7AED18FA1C4C004E8688 /* SFImageRequestOperation.m in Sources */,
 				76DB7AEC18FA1C4C004E8688 /* SFHTTPRequestOperation.m in Sources */,
+				761A3F3018FA417C0011CF0B /* OCRTextViewController.m in Sources */,
 				76DB7AEB18FA1C4C004E8688 /* SFHTTPClient.m in Sources */,
 				76DB7AF218FA1C4C004E8688 /* SFXMLRequestOperation.m in Sources */,
+				761A3F3518FA46070011CF0B /* HomeViewController.m in Sources */,
 				D4231DF518F66D02000BB5B3 /* ViewController.m in Sources */,
 				D4231DEF18F66D02000BB5B3 /* AppDelegate.m in Sources */,
+				761A3F2F18FA417C0011CF0B /* OCRMainViewController.m in Sources */,
 				76DB7AB318FA139E004E8688 /* OCRSDKClient.m in Sources */,
 				76DB7AEE18FA1C4C004E8688 /* SFJSONRequestOperation.m in Sources */,
 				D4231DEB18F66D02000BB5B3 /* main.m in Sources */,
