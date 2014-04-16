@@ -61,15 +61,10 @@
         <scene sceneID="WW6-Jc-3Hi">
             <objects>
                 <viewController id="2ar-gY-wU8" customClass="OCRMainViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="GyQ-cy-3nj"/>
-                        <viewControllerLayoutGuide type="bottom" id="B6e-D9-5vY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bmC-Zb-cTr">
+                    <imageView key="view" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="BoS-ip-Enf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </imageView>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccd-VB-RuV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
