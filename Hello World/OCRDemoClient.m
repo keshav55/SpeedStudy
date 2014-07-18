@@ -1,8 +1,8 @@
 #import "OCRDemoClient.h"
 
 
-static NSString * const kApplicationId = @"SpeedStudy";
-static NSString * const kPassowrd = @"mp3LWpopEgN1TkCv8asqRGUJ ";
+static NSString * const kApplicationId = @"StudyRead";
+static NSString * const kPassowrd = @"m1qIV6DDxBZDJ4FPGJW5jjbJ";
 
 @implementation OCRDemoClient
 

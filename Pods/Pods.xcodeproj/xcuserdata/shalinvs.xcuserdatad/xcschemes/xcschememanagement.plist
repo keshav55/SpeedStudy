@@ -39,6 +39,11 @@
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
+		<key>Pods-Unirest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
 		<key>Pods-XMLDictionary.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -57,7 +62,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>1755961F989044BAB08BA0C4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1BD76ABA18DB46ABB8507681</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1CCB4BC688274A9584EBE1D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3D42EAE21EF34F678F4C535E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>420AB19271C34BFEBD72EF1B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,7 +97,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>71BCD87DEDC6488D805CF64A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8DE4B49F89A049BD852F9FD6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9CFC6610899C4258B2758F67</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A7AD9268AE8B4592A5EE571E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A8F8AFE6C3E542B28AC9BFE6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -83,6 +128,16 @@
 			<true/>
 		</dict>
 		<key>BD01D7A3E1B74B36A12AF49C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C7F41A3CAF264E7CB4E4D5AE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CF80C96584094F57A398A877</key>
 		<dict>
 			<key>primary</key>
 			<true/>

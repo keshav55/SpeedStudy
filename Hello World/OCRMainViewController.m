@@ -21,26 +21,16 @@ static NSString * const kExportFormat = @"txt";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	
-	UIBarButtonItem *takePhotoButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Take Photo", @"Take Photo")
-																		style:UIBarButtonItemStyleBordered
-																	   target:self
-																	   action:@selector(takePhoto:)];
-	
-    UIBarButtonItem *recognizeButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Recognize", @"Recognize")
-																			style:UIBarButtonItemStyleBordered
-																		target:self
-																		action:@selector(recognize:)];
-	
-	self.navigationItem.leftBarButtonItem = takePhotoButton;
-	self.navigationItem.rightBarButtonItem = recognizeButton;
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
 	
 	self.imageView.image = [UIImage imageNamed:@"sample.jpg"];
 }
 
 #pragma mark -
 
-- (void)takePhoto:(id)sender
+- (IBAction)takePhoto:(id)sender
 {
 	UIImagePickerController* imagePicker = [[UIImagePickerController alloc] init];
 	
@@ -52,7 +42,7 @@ static NSString * const kExportFormat = @"txt";
 	[self presentModalViewController:imagePicker animated:YES];
 }
 
-- (void)recognize:(id)sender
+- (IBAction)recognize:(id)sender
 {
 	self.alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Authorizing...", @"Authorizing...")
 												message:@"\n\n"
@@ -112,6 +102,8 @@ static NSString * const kExportFormat = @"txt";
 	[[OCRDemoClient sharedClient] downloadRecognizedData:url success:^(NSData *downloadedData) {
 		[self.alertView dismissWithClickedButtonIndex:-1 animated:YES];
 		
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+         self.textViewController = (OCRTextViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TextView"];
 		if (self.textViewController == nil) {
 	        self.textViewController = [[OCRTextViewController alloc] initWithNibName:@"TextView" bundle:nil];
 	    }
@@ -159,4 +151,9 @@ static NSString * const kExportFormat = @"txt";
 	}
 }
 
+- (IBAction)PhotoPicker:(id)sender {
+}
+
+- (IBAction)Recognizer:(id)sender {
+}
 @end

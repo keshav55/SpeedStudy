@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <Spritz-SDK/SpritzSDK.h>
+#import <UNIRest.h>
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *spritzStyleSegmentedControl;
@@ -17,11 +18,16 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
+-(id) init
 {
+    self = [super init];
+    
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    
+    return self;
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -35,13 +41,18 @@
 - (IBAction)startSpritz:(id)sender {
     if (self.spritzStyleSegmentedControl.selectedSegmentIndex == 0){
         
+        NSString *reading = [[NSUserDefaults standardUserDefaults]objectForKey:@"reading"];
+        
         //The SpritzInlineView class is a UIView subclass that can be inititated from a UIStoryboard. The startSpritzing method starts spritzing the passed in URL.
         NSBundle *bundle = [NSBundle mainBundle];
         NSString *textFilePath = [bundle pathForResource:@"Good" ofType:@"txt"];
         NSString *fileContents=[NSString stringWithContentsOfFile:textFilePath encoding:NSASCIIStringEncoding error:NULL];
         
-        
-        [self.spritzInlineView startSpritzing:fileContents sourceType:SourceFlagPlain];
+        if (!reading)
+        {
+            reading = fileContents;
+        }
+        [self.spritzInlineView startSpritzing:reading sourceType:SourceFlagPlain];
     }
     else{
         if (self.spritzStyleSegmentedControl.selectedSegmentIndex == 1){
@@ -49,12 +60,22 @@
             //The SpritzViewController is self contained UIViewController that contains a SpritzInlineView and several utility controls. The startSpritzing method starts spritzing the passed in URL.
             
             SpritzViewController *spritzVC = [[SpritzViewController alloc] init];
+            NSString *reading = [[NSUserDefaults standardUserDefaults]objectForKey:@"reading"];
+            
+            //The SpritzInlineView class is a UIView subclass that can be inititated from a UIStoryboard. The startSpritzing method starts spritzing the passed in URL.
             NSBundle *bundle = [NSBundle mainBundle];
             NSString *textFilePath = [bundle pathForResource:@"Good" ofType:@"txt"];
             NSString *fileContents=[NSString stringWithContentsOfFile:textFilePath encoding:NSASCIIStringEncoding error:NULL];
             
+            if (!reading)
+            {
+                reading = fileContents;
+            }
+            
             [self presentViewController:spritzVC animated:YES completion:^{
-                [spritzVC startSpritzing:fileContents sourceType:SourceFlagPlain];
+                [spritzVC startSpritzing:reading sourceType:SourceFlagPlain];
+                
+            
             }];
         }
     }
