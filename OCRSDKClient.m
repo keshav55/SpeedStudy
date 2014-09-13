@@ -183,6 +183,7 @@ static NSString * const kOCRSDKInstallationId = @"com.abbyy.ocrsdk.installation-
 	}];
 	
 	[self enqueueHTTPRequestOperation:operation];
+	//This should work
 }
 
 #pragma mark -
