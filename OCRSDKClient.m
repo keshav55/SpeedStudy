@@ -162,6 +162,7 @@ static NSString * const kOCRSDKInstallationId = @"com.abbyy.ocrsdk.installation-
 	}];
 }
 
+//Download tool
 - (void)downloadRecognizedData:(NSURL *)url
 					   success:(void (^)(NSData *downloadedData))success
 					   failure:(void (^)(NSError *error))failure
