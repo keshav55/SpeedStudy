@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <Spritz-SDK/SpritzSDK.h>
+#import <SpritzSDK/SpritzSDK.h>
 #import "OCRMainViewController.h"
 
 @implementation AppDelegate
@@ -17,7 +17,7 @@ static NSString *kClientSecret = @"b029cb59-efb7-4236-8367-11bd3e9f8ed1";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [SpritzSDK setClientID:kClientID clientSecret:kClientSecret redirecURI:@"https://sdk.spritzinc.com/js/1.0/examples/login_success.html"];
+    [SpritzSDK setClientID:kClientID clientSecret:kClientSecret];
     
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     

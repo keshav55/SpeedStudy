@@ -1,6 +1,6 @@
 #import "OCRTextViewController.h"
 #import <QuartzCore/QuartzCore.h>
-#import <Spritz-SDK/SpritzSDK.h>
+#import <SpritzSDK/SpritzSDK.h>
 #import "ViewController.h"
 
 @implementation OCRTextViewController

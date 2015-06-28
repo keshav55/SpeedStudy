@@ -1,0 +1,6 @@
+framework module SpritzSDK {
+  umbrella header "SpritzSDK.h"
+
+  export *
+  module * { export * }
+}

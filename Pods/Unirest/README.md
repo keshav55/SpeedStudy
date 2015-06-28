@@ -1,6 +1,13 @@
-# Unirest for Objective-C [![Build Status](https://api.travis-ci.org/Mashape/unirest-obj-c.png)](https://travis-ci.org/Mashape/unirest-obj-c)
+# Unirest for Objective-C  [![Build Status][travis-image]][travis-url] [![version][cocoapods-version]][cocoapods-url]
 
-Unirest is a set of lightweight HTTP libraries available in multiple languages, ideal for most applications:
+[![License][cocoapods-license]][license-url]
+[![Code Climate][codeclimate-quality]][codeclimate-url]
+[![Coverage Status][codeclimate-coverage]][codeclimate-url]
+[![Gitter][gitter-image]][gitter-url]
+
+Unirest is a set of lightweight HTTP libraries available in [multiple languages](http://unirest.io).
+
+## Features
 
 * Make `GET`, `POST`, `PUT`, `PATCH`, `DELETE` requests
 * Both syncronous and asynchronous (non-blocking) requests
@@ -11,10 +18,6 @@ Unirest is a set of lightweight HTTP libraries available in multiple languages, 
 * Customizable default headers for every request (DRY)
 * Automatic JSON parsing into native object (`NSDictionary` or `NSArray`) for JSON responses
 
-Created with love by [thefosk](https://github.com/thefosk) @ [mashape.com](https://mashape.com)
-
-
-
 ## Installing
 <a href="https://github.com/Mashape/unirest-obj-c/archive/master.zip">Download</a> the Objective-C Unirest Library from <a href="https://github.com/Mashape/unirest-obj-c">GitHub</a> (or clone the repo) and import the folder into your project. You can also install Unirest-obj-c with [CocoaPods](http://cocoapods.org/).
 
@@ -22,7 +25,7 @@ Created with love by [thefosk](https://github.com/thefosk) @ [mashape.com](https
 
 If you decide to use CocoaPods, create a `Podfile` file in your project's folder:
 
-```
+```bash
 $ edit Podfile
 platform :ios, '5.0'
 pod 'Unirest', '~> 1.1.3'
@@ -30,7 +33,7 @@ pod 'Unirest', '~> 1.1.3'
 
 and then execute `pod install`. Make sure to always open the Xcode **workspace** instead of the project file when building your project:
 
-```
+```bash
 $ open App.xcworkspace
 ```
 
@@ -55,7 +58,7 @@ So you're probably wondering how using Unirest makes creating requests in Object
 NSDictionary* headers = @{@"accept": @"application/json"};
 NSDictionary* parameters = @{@"parameter": @"value", @"foo": @"bar"};
 
-UNIHTTPJsonResponse* response = [[UNIRest post:^(UNISimpleRequest* request) {
+UNIHTTPJsonResponse *response = [[UNIRest post:^(UNISimpleRequest *request) {
   [request setUrl:@"http://httpbin.org/post"];
   [request setHeaders:headers];
   [request setParameters:parameters];
@@ -68,19 +71,19 @@ Just like in the Unirest Java library the Objective-C library supports multiple 
 For non-blocking requests you will want to make an asychronous request to keep your application going while data is fetched or updated in the background, doing so with unirest is extremely easy with barely any code change from the previous example:
 
 ```objective-c
-NSDictionary* headers = @{@"accept": @"application/json"};
-NSDictionary* parameters = @{@"parameter": @"value", @"foo": @"bar"};
+NSDictionary *headers = @{@"accept": @"application/json"};
+NSDictionary *parameters = @{@"parameter": @"value", @"foo": @"bar"};
 
-[[UNIRest post:^(UNISimpleRequest* request) {
+[[UNIRest post:^(UNISimpleRequest *request) {
   [request setUrl:@"http://httpbin.org/post"];
   [request setHeaders:headers];
   [request setParameters:parameters];
 }] asJsonAsync:^(UNIHTTPJsonResponse* response, NSError *error) {
   // This is the asyncronous callback block
-  NSInteger* code = [response code];
-  NSDictionary* responseHeaders = [response headers];
-  UNIJsonNode* body = [response body];
-  NSData* rawBody = [response rawBody];
+  NSInteger code = response.code;
+  NSDictionary *responseHeaders = response.headers;
+  UNIJsonNode *body = response.body;
+  NSData *rawBody = response.rawBody;
 }];
 ```
 
@@ -89,7 +92,7 @@ NSDictionary* parameters = @{@"parameter": @"value", @"foo": @"bar"};
 You can cancel an asyncronous request by invoking the `cancel` method on the `UNIUrlConnection` object:
 
 ```objective-c
-UNIUrlConnection* asyncConnection = [[UNIRest get:^(UNISimpleRequest *simpleRequest) {
+UNIUrlConnection *asyncConnection = [[UNIRest get:^(UNISimpleRequest *simpleRequest) {
     [request setUrl:@"http://httpbin.org/get"];
 }] asJsonAsync:^(UNIHTTPJsonResponse *response, NSError *error) {
     // Do something
@@ -106,7 +109,7 @@ NSDictionary* headers = @{@"accept": @"application/json"};
 NSURL* file = nil;
 NSDictionary* parameters = @{@"parameter": @"value", @"file": file};
 
-UNIHTTPJsonResponse* response = [[UNIRest post:^(UNISimpleRequest* request) {
+UNIHTTPJsonResponse *response = [[UNIRest post:^(UNISimpleRequest *request) {
   [request setUrl:@"http://httpbin.org/post"];
   [request setHeaders:headers];
   [request setParameters:parameters];
@@ -117,14 +120,14 @@ UNIHTTPJsonResponse* response = [[UNIRest post:^(UNISimpleRequest* request) {
 To send a custom body such as JSON simply serialize your data utilizing the `NSJSONSerialization` with a `BodyRequest` and `[method]Entity` instead of just `[method]` block like so:
 
 ```objective-c
-NSDictionary* headers = @{@"accept": @"application/json"};
-NSDictionary* parameters = @{@"parameter": @"value", @"foo": @"bar"};
+NSDictionary *headers = @{@"accept": @"application/json"};
+NSDictionary *parameters = @{@"parameter": @"value", @"foo": @"bar"};
 
-UNIHTTPJsonResponse* response = [[UNIRest postEntity:^(UNIBodyRequest* request) {
+UNIHTTPJsonResponse *response = [[UNIRest postEntity:^(UNIBodyRequest *request) {
   [request setUrl:@"http://httpbin.org/post"];
   [request setHeaders:headers];
   // Converting NSDictionary to JSON:
-  [request setBody:[NSJSONSerialization dataWithJSONObject:headers options:0 error:nil]];
+  [request setBody:[NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil]];
 }] asJson];
 ```
 
@@ -133,7 +136,7 @@ UNIHTTPJsonResponse* response = [[UNIRest postEntity:^(UNIBodyRequest* request) 
 Authenticating the request with basic authentication can be done by setting the `username` and `password` properties in the builder:
 
 ```objective-c
-UNIHTTPJsonResponse* response = [[UNIRest get:^(UNISimpleRequest * request) {
+UNIHTTPJsonResponse *response = [[UNIRest get:^(UNISimpleRequest *request) {
     [request setUrl:@"http://httpbin.org/get"];
     [request setUsername:@"user"];
     [request setPassword:@"password"];
@@ -256,3 +259,23 @@ You can clear the default headers anytime with:
 ```objective-c
 [UNIRest clearDefaultHeaders];
 ```
+
+----
+
+Made with &#9829; from the [Mashape](https://www.mashape.com/) team
+
+[license-url]: https://github.com/Mashape/unirest-obj-c/blob/master/LICENSE
+
+[gitter-url]: https://gitter.im/Mashape/unirest-obj-c
+[gitter-image]: https://img.shields.io/badge/Gitter-Join%20Chat-blue.svg?style=flat
+
+[travis-url]: https://travis-ci.org/Mashape/unirest-obj-c
+[travis-image]: https://img.shields.io/travis/Mashape/unirest-obj-c.svg?style=flat
+
+[cocoapods-url]: http://cocoadocs.org/docsets/Unirest
+[cocoapods-license]: https://img.shields.io/cocoapods/l/Unirest.svg?style=flat
+[cocoapods-version]: https://img.shields.io/cocoapods/v/Unirest.svg?style=flat
+
+[codeclimate-url]: https://codeclimate.com/github/Mashape/unirest-obj-c
+[codeclimate-quality]: https://img.shields.io/codeclimate/github/Mashape/unirest-obj-c.svg?style=flat
+[codeclimate-coverage]: https://img.shields.io/codeclimate/coverage/github/Mashape/unirest-obj-c.svg?style=flat
